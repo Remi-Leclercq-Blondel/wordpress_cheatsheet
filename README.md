@@ -31,3 +31,16 @@ function list_styles() {
     }
 }
 ```
+
+## Action (hook)
+
+### Remove an action
+
+```php
+//Simple function on action
+remove_action('some_action', 'some_function');
+
+//Simple function on action with a class
+remove_action('some_action', ['class_name', 'some_function']);
+
+```
