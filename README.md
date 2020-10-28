@@ -44,3 +44,24 @@ remove_action('some_action', 'some_function');
 remove_action('some_action', ['class_name', 'some_function']);
 
 ```
+
+## Mail
+
+### Block email
+
+```php
+class fakePhpMailer()
+{
+    public function send()
+    {
+        return true;
+    }
+}
+
+add_action('phpmailer_init', 'blockEmailSending');
+
+function blockEmailSending(&$phpmailer)
+{
+    $phpmailer = new fakePhpMailer();
+}
+```
